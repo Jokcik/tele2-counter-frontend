@@ -17,8 +17,8 @@ export class StaticsComponent implements OnInit {
 
   async ngOnInit() {
     const result = await this.staticsService.getBasic();
-    this.video = result.video;
-    this.channel = result.channel;
+    this.video = <IStat>result.video;
+    this.channel = <IStat> result.channel;
 
     this.cd.detectChanges();
   }

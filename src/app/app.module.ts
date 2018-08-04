@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -10,6 +10,12 @@ import {ChartsModule} from './charts/charts-module';
 import { StaticsComponent } from './statics/statics.component';
 import {ResourceModule} from '@ngx-resource/handler-ngx-http';
 import {HttpClientModule} from '@angular/common/http';
+// import {defineLocale} from 'moment';
+import {registerLocaleData} from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
+
+// defineLocale('ru', localeRu);
+// registerLocaleData(localeRu);
 
 
 @NgModule({
@@ -28,7 +34,7 @@ import {HttpClientModule} from '@angular/common/http';
 
     ChartsModule
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'ru'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

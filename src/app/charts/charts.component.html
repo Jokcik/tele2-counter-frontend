@@ -1,2 +1,24 @@
-  <button (click)="add()">Add Point!</button>
-  <div [chart]="chart"></div>
+<div class="esport-charts">
+  <div class="form-group">
+    <!--<mat-form-field class="value">-->
+      <!--<input matInput [matDatepicker]="picker" [value]="min" (dateChange)="min = $event.value" placeholder="Минимум">-->
+      <!--<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+      <!--<mat-datepicker #picker></mat-datepicker>-->
+    <!--</mat-form-field>-->
+
+    <!--<mat-form-field class="value">-->
+      <!--<input matInput [matDatepicker]="picker1" [value]="max" (dateChange)="max = $event.value" placeholder="Максимум">-->
+      <!--<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>-->
+      <!--<mat-datepicker #picker1></mat-datepicker>-->
+    <!--</mat-form-field>-->
+
+    <button class="value" mat-raised-button="primary" (click)="changeRange()">Построить</button>
+
+  </div>
+
+  <div class="chart1" [chart]="chart1"></div>
+  <div class="chart1" [chart]="chart2"></div>
+  <div class="chart2" [chart]="chart3"></div>
+  <div class="chart2" [chart]="chart4"></div>
+
+</div>

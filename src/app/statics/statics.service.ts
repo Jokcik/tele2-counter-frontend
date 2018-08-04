@@ -7,9 +7,20 @@ export interface IStat {
   count?: number;
 }
 
+export interface IData {
+  date: Date;
+  count: number;
+  avg: number;
+}
+
 export interface IBasicStat {
-  video: IStat,
-  channel: IStat,
+  video: IStat;
+  channel: IStat;
+}
+
+export interface IViewersStat {
+  videos: IData[];
+  channels: IData[];
 }
 
 @Injectable({providedIn: 'root'})
@@ -17,4 +28,7 @@ export interface IBasicStat {
 export class StaticsService extends AppResource {
   @ResourceAction({path: '/basic'})
   getBasic: IResourceMethod<void, IBasicStat>;
+
+  @ResourceAction({path: '/viewers'})
+  getViewers: IResourceMethod<void, IViewersStat>;
 }

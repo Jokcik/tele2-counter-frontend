@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {LayoutModule} from '@angular/cdk/layout';
 import {
-  MatButtonModule, MatCardModule,
+  MatButtonModule, MatCardModule, MatDatepickerModule,
   MatGridListModule,
-  MatIconModule,
-  MatListModule, MatMenuModule, MatPaginatorModule,
+  MatIconModule, MatInputModule,
+  MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule,
   MatSidenavModule, MatSortModule, MatTableModule,
   MatToolbarModule, MatTreeModule
 } from '@angular/material';
@@ -23,11 +23,15 @@ const imports = [
   MatPaginatorModule,
   MatSortModule,
   MatTreeModule,
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 ];
 
 @NgModule({
   imports: imports,
-  exports: imports
+  exports: imports,
+  providers: [MatNativeDateModule]
 })
 export class MaterialModule {
 }

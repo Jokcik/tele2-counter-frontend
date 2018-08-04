@@ -32,6 +32,8 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/utils/stat/",
+              "deployUrl": "/utils/stat/",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",

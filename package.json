@@ -25,9 +25,11 @@
     "@angular/router": "^6.0.2",
     "@ngx-resource/core": "^5.3.0",
     "@ngx-resource/handler-ngx-http": "^6.0.1",
+    "@types/moment": "^2.13.0",
     "angular-highcharts": "^6.2.6",
     "core-js": "^2.5.4",
     "highcharts": "^6.1.1",
+    "moment": "^2.22.2",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
