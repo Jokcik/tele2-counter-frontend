@@ -1,3 +1,13 @@
-.esports-statics {
-  padding: 20px;
+.static {
+  .ordered-list {
+    >.list-item:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+  .unordered-list {
+    margin-top: 10px;
+    .list-item {
+      padding-top: 10px;
+    }
+  }
 }

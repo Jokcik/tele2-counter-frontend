@@ -8,6 +8,8 @@ import {AppRoutingModule} from './app-router.module';
 import {MaterialModule} from './core/material.module';
 import {ChartsModule} from './charts/charts-module';
 import { StaticsComponent } from './statics/statics.component';
+import {ResourceModule} from '@ngx-resource/handler-ngx-http';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { StaticsComponent } from './statics/statics.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
+    HttpClientModule,
+    ResourceModule.forRoot(),
 
     ChartsModule
   ],

@@ -1,3 +1,17 @@
-<p>
-  statics works!
-</p>
+<div class="static">
+  <ol class="ordered-list">
+    <li>Общее количество просмотров видео-контента за все время
+      <ul class="unordered-list">
+        <li class="list-item">Стрима: <span>{{ channel.qty }}</span></li>
+        <li class="list-item">Видео: <span>{{ video.qty }}</span></li>
+      </ul>
+    </li>
+    <li class="list-item">Среднее количество просмотров видео-контента за все время
+      <ul class="unordered-list">
+        <li class="list-item">Стрима: <span>{{(channel.qty / channel.count).toFixed(0) }}</span></li>
+        <li class="list-item">Видео: <span>{{(video.qty / channel.count).toFixed(0) }}</span></li>
+      </ul>
+    </li>
+  </ol>
+
+</div>

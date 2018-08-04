@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'http://esport.tele2.ru/api/statistics/'
+  url: 'http://esport.tele2.ru/api/'
 };
 
 /*
