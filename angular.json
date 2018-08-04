@@ -127,7 +127,8 @@
   "defaultProject": "tele2-counter-frontend",
   "schematics": {
     "@schematics/angular:component": {
-      "styleext": "scss"
+      "styleext": "scss",
+      "spec": false
     }
   }
 }

@@ -1,52 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MyNavComponent } from './my-nav/my-nav.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import {
-  MatToolbarModule,
-  MatButtonModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatListModule,
-  MatGridListModule,
-  MatCardModule,
-  MatMenuModule,
-  MatTableModule,
-  MatPaginatorModule,
-  MatSortModule,
-  MatTreeModule
-} from '@angular/material';
-import { ChartsComponent } from './charts/charts.component';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NavComponent} from './nav/nav.component';
 import {AppRoutingModule} from './app-router.module';
-
+import {MaterialModule} from './core/material.module';
+import {ChartsModule} from './charts/charts-module';
+import { StaticsComponent } from './statics/statics.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyNavComponent,
-    ChartsComponent,
+    NavComponent,
+    StaticsComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatTreeModule,
     AppRoutingModule,
+    MaterialModule,
+
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
