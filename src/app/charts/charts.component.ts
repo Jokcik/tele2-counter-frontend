@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Chart, Highcharts} from 'angular-highcharts';
-import {IData, StaticsService} from '../statics/statics.service';
-import * as moment from 'moment'
+import {StaticsService} from '../statics/statics.service';
+import * as moment from 'moment';
 
 moment.locale("ru", );
+
 Highcharts.setOptions({
+  global: {
+    useUTC: false
+  },
   lang: <any>{
     loading: 'Загрузка...',
     months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
