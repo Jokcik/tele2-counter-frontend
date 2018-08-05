@@ -8,6 +8,9 @@
     margin-top: 10px;
     .list-item {
       padding-top: 10px;
+      span {
+        font-weight: bold;
+      }
     }
   }
 }

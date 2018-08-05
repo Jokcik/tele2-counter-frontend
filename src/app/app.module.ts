@@ -7,15 +7,12 @@ import {NavComponent} from './nav/nav.component';
 import {AppRoutingModule} from './app-router.module';
 import {MaterialModule} from './core/material.module';
 import {ChartsModule} from './charts/charts-module';
-import { StaticsComponent } from './statics/statics.component';
+import {StaticsComponent} from './statics/statics.component';
 import {ResourceModule} from '@ngx-resource/handler-ngx-http';
 import {HttpClientModule} from '@angular/common/http';
-// import {defineLocale} from 'moment';
-import {registerLocaleData} from '@angular/common';
-import localeRu from '@angular/common/locales/ru';
-
-// defineLocale('ru', localeRu);
-// registerLocaleData(localeRu);
+import {UsersComponent} from './users/users.component';
+import {ChartModule} from 'angular-highcharts';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -23,6 +20,7 @@ import localeRu from '@angular/common/locales/ru';
     AppComponent,
     NavComponent,
     StaticsComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +30,9 @@ import localeRu from '@angular/common/locales/ru';
     HttpClientModule,
     ResourceModule.forRoot(),
 
-    ChartsModule
+    ChartsModule,
+    ChartModule,
+    FormsModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'ru'}],
   bootstrap: [AppComponent]

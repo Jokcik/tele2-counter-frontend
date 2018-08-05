@@ -12,5 +12,16 @@
         <li class="list-item">Видео: <span>{{ (video.qty / channel.count).toFixed(0) }} просмотров</span></li>
       </ul>
     </li>
+    <li class="list-item">Общая информация
+      <ul class="unordered-list">
+        <li class="list-item">Число зарегистрированных пользователей: <span>{{ result.regUser }}</span></li>
+        <li class="list-item">Количество каналов, получивших лицензию: <span>{{ result.offertas }}</span></li>
+        <li class="list-item">Количество пользователей с подпиской КиберБафф: <span>{{ result.premium }}</span></li>
+
+        <li class="list-item">Всего загруженных видео: <span>{{ video.count }}</span></li>
+        <li class="list-item">Всего каналов: <span>{{ channel.count }}</span></li>
+        <li class="list-item">Всего активированных каналов: <span>{{ result.activeChannel }}</span></li>
+      </ul>
+    </li>
   </ol>
 </div>

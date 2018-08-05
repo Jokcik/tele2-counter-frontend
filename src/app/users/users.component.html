@@ -1,0 +1,13 @@
+<div class="esport-charts">
+  <div class="form-group">
+    <mat-form-field class="value">
+      <input matInput [(ngModel)]="nickname" (keydown.enter)="load()" placeholder="Введите имя пользователя">
+    </mat-form-field>
+
+    <button class="value" mat-raised-button="primary" (click)="load()">Построить</button>
+
+  </div>
+
+  <div class="chart1" [chart]="chart1"></div>
+
+</div>

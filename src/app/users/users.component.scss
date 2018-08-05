@@ -1,0 +1,16 @@
+.esport-charts {
+  padding-top: 20px;
+
+  .chart1, .chart2 {
+    margin-bottom: 50px;
+  }
+
+  .form-group {
+    .value {
+      width: 12%;
+    }
+    .value:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+}

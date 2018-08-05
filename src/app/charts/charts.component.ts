@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Chart, Highcharts} from 'angular-highcharts';
 import {StaticsService} from '../statics/statics.service';
 import * as moment from 'moment';
+import {UtilsService} from '../core/utils';
 
 moment.locale("ru", );
 
@@ -27,7 +28,7 @@ Highcharts.setOptions({
   }
 });
 
-const value = {
+export const options: Highcharts.Options = {
   chart: {
     zoomType: 'x'
   },
@@ -39,7 +40,7 @@ const value = {
     title: {
       text: 'Дата'
     },
-    tickInterval: 60 * 3600 * 1000,
+    // tickInterval: 60 * 3600 * 1000,
     labels: {
       formatter: function() {
         return moment(this.value).format("YYYY-MM-DD");
@@ -62,7 +63,7 @@ const value = {
   },
   plotOptions: {
     series: {
-      turboThreshold: 50
+      turboThreshold: 5
     },
     area: {
       fillColor: {
@@ -102,12 +103,13 @@ export class ChartsComponent implements OnInit {
   public min: Date = new Date(Date.now() - 5 * 60 * 3600 * 1000);
   public max: Date = new Date();
 
-  public chart1 = new Chart(value);
-  public chart2 = new Chart({...value, title: {text: 'Среднее время просмотра stream-контента в час на одного стримера'}});
-  public chart3 = new Chart({...value, title: {text: 'Просмотры video-контента в час'}});
-  public chart4 = new Chart({...value, title: {text: 'Среднее время просмотра video-контента в час на одно видео'}});
+  public chart1 = new Chart(options);
+  public chart2 = new Chart({...options, title: {text: 'Среднее время просмотра stream-контента в час на одного стримера'}});
+  public chart3 = new Chart({...options, title: {text: 'Просмотры video-контента в час'}});
+  public chart4 = new Chart({...options, title: {text: 'Среднее время просмотра video-контента в час на одно видео'}});
 
-  constructor(private statService: StaticsService) {
+  constructor(private statService: StaticsService,
+              private utils: UtilsService) {
   }
 
   async ngOnInit() {
@@ -115,17 +117,16 @@ export class ChartsComponent implements OnInit {
     const channels = viewers.channels;
     const videos = viewers.videos;
 
-    const arr1 = <number[][]>channels.map(val => ( [new Date(val.date), val.count] ));
-    const arr2 = <number[][]>channels.map(val => ( [new Date(val.date), val.avg] ));
-    const arr3 = <number[][]>videos.map(val => ( [new Date(val.date), val.count] ));
-    const arr4 = <number[][]>videos.map(val => ( [new Date(val.date), val.avg] ));
+    const arr1 = this.utils.setEmptyPoint(channels);
+    const arr2 = this.utils.setEmptyPoint(channels, 'avg');
+    const arr3 = this.utils.setEmptyPoint(videos);
+    const arr4 = this.utils.setEmptyPoint(videos, 'avg');
 
     this.chart1.addSerie({ name: 'Стрим контент',  data: <any>arr1, type: 'area' });
     this.chart2.addSerie({ name: 'Стрим контент',  data: <any>arr2, type: 'area' });
     this.chart3.addSerie({ name: 'Видео контент',  data: <any>arr3, type: 'area' });
     this.chart4.addSerie({ name: 'Видео контент',  data: <any>arr4, type: 'area' });
 
-    // this.changeRange();
   }
 
   public changeRange() {

@@ -14,8 +14,12 @@ export interface IData {
 }
 
 export interface IBasicStat {
-  video: IStat;
-  channel: IStat;
+  video?: IStat;
+  channel?: IStat;
+  regUser?: number;
+  offertas?: number;
+  premium?: number;
+  activeChannel?: number;
 }
 
 export interface IViewersStat {
@@ -31,4 +35,7 @@ export class StaticsService extends AppResource {
 
   @ResourceAction({path: '/viewers'})
   getViewers: IResourceMethod<void, IViewersStat>;
+
+  @ResourceAction({path: '/viewers/{!:nickname}'})
+  getStatStreamer: IResourceMethod<{ nickname: string }, IData[]>;
 }
