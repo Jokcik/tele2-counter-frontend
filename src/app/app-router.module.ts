@@ -6,7 +6,7 @@ import {ChartsComponent} from './charts/charts.component';
 import {StaticsComponent} from './statics/statics.component';
 
 const routes: Routes = [
-  {path: '', component: AppComponent},
+  {path: '', component: StaticsComponent},
   {path: 'charts', component: ChartsComponent},
   {path: 'statics', component: StaticsComponent},
 

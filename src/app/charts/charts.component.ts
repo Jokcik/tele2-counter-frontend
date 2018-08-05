@@ -99,9 +99,9 @@ export class ChartsComponent implements OnInit {
   public max: Date = new Date();
 
   public chart1 = new Chart(value);
-  public chart2 = new Chart({...value, title: {text: 'Среднее время просмотра stream-контента в час'}});
+  public chart2 = new Chart({...value, title: {text: 'Среднее время просмотра stream-контента в час на одного стримера'}});
   public chart3 = new Chart({...value, title: {text: 'Просмотры video-контента в час'}});
-  public chart4 = new Chart({...value, title: {text: 'Среднее время просмотра video-контента в час'}});
+  public chart4 = new Chart({...value, title: {text: 'Среднее время просмотра video-контента в час на одно видел'}});
 
   constructor(private statService: StaticsService) {
   }
@@ -121,7 +121,7 @@ export class ChartsComponent implements OnInit {
     this.chart3.addSerie({ name: 'Видео контент',  data: <any>arr3, type: 'area' });
     this.chart4.addSerie({ name: 'Видео контент',  data: <any>arr4, type: 'area' });
 
-    this.changeRange();
+    // this.changeRange();
   }
 
   public changeRange() {
