@@ -105,7 +105,7 @@ export class ChartsComponent implements OnInit {
   public chart1 = new Chart(value);
   public chart2 = new Chart({...value, title: {text: 'Среднее время просмотра stream-контента в час на одного стримера'}});
   public chart3 = new Chart({...value, title: {text: 'Просмотры video-контента в час'}});
-  public chart4 = new Chart({...value, title: {text: 'Среднее время просмотра video-контента в час на одно видел'}});
+  public chart4 = new Chart({...value, title: {text: 'Среднее время просмотра video-контента в час на одно видео'}});
 
   constructor(private statService: StaticsService) {
   }
