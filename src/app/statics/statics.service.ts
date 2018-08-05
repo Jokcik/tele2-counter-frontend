@@ -27,6 +27,11 @@ export interface IViewersStat {
   channels: IData[];
 }
 
+export interface IStatStreamer {
+  activityChannel: IData[];
+  activitySite: IData[];
+}
+
 @Injectable({providedIn: 'root'})
 @ResourceParams({pathPrefix: 'statistics'})
 export class StaticsService extends AppResource {
@@ -37,5 +42,5 @@ export class StaticsService extends AppResource {
   getViewers: IResourceMethod<void, IViewersStat>;
 
   @ResourceAction({path: '/viewers/{!:nickname}'})
-  getStatStreamer: IResourceMethod<{ nickname: string }, IData[]>;
+  getStatStreamer: IResourceMethod<{ nickname: string }, IStatStreamer>;
 }
