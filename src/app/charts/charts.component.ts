@@ -114,8 +114,8 @@ export class ChartsComponent implements OnInit {
 
   async ngOnInit() {
     const viewers = await this.statService.getViewers();
-    const channels = viewers.channels;
-    const videos = viewers.videos;
+    const channels = this.utils.roundPoints(viewers.channels, ['count', 'avg'], 12);
+    const videos = this.utils.roundPoints(viewers.videos, ['count', 'avg'], 12);
 
     const arr1 = this.utils.setEmptyPoint(channels);
     const arr2 = this.utils.setEmptyPoint(channels, 'avg');

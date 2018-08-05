@@ -7,6 +7,13 @@ export class UtilsService {
   constructor() {
   }
 
+  public roundPoints(array: any[], fields: any[], divider: number) {
+    const result = array.slice();
+    result.forEach(value => fields.forEach(field => value[field] = Math.round(value[field] / divider)));
+
+    return result;
+  }
+
   public setEmptyPoint(data: IData[], field: string = 'count') {
     if (!data || !data.length) { return [] }
 

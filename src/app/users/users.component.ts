@@ -11,8 +11,8 @@ import {UtilsService} from '../core/utils';
 })
 export class UsersComponent implements OnInit {
   public nickname: string = 'letmeplay';
-  public chart1 = new Chart({...options, title: {text: 'Активность пользователей на канале стримера'}});
-  public chart2 = new Chart({...options, title: {text: 'Активность пользователя на сайте'}});
+  public chart1 = new Chart({...options, title: {text: 'Активность пользователей на канале стримера'}, tooltip: {...options.tooltip, pointFormat: 'в среднем {point.y} просм. час' }});
+  public chart2 = new Chart({...options, title: {text: 'Активность пользователя на сайте'}, tooltip: {...options.tooltip, pointFormat: 'в среднем {point.y} просм. час' }} );
 
   constructor(private statService: StaticsService,
               private utils: UtilsService) {
@@ -25,6 +25,9 @@ export class UsersComponent implements OnInit {
   public async load() {
     try {
       const stat = await this.statService.getStatStreamer({ nickname: this.nickname });
+      stat.activityChannel = this.utils.roundPoints(stat.activityChannel, ['count', 'avg'], 60);
+      stat.activitySite = this.utils.roundPoints(stat.activitySite, ['count', 'avg'], 60);
+
       const arr1 = this.utils.setEmptyPoint(stat.activityChannel);
       const arr2 = this.utils.setEmptyPoint(stat.activitySite);
 
