@@ -9,7 +9,7 @@ export class UtilsService {
 
   public roundPoints(array: any[], fields: any[], divider: number) {
     const result = array.slice();
-    result.forEach(value => fields.forEach(field => value[field] = Math.round(value[field] / divider)));
+    result.forEach(value => fields.forEach(field => value[field] = Math.ceil(value[field] / divider)));
 
     return result;
   }
