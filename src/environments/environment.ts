@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // url: 'http://esport.tele2.ru/api/'
-  url: 'http://localhost:8001/'
+  url: 'https://esport.tele2.ru/api/'
+  // url: 'http://localhost:8001/'
 };
 
 /*
