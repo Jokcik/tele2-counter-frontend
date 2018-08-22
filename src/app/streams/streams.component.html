@@ -1,0 +1,52 @@
+<div class="esport-stream-stats">
+  <div class="form-group">
+
+    <mat-form-field class="value">
+      <input matInput [(ngModel)]="nickname" placeholder="Введите имя пользователя">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="from" placeholder="С" [(ngModel)]="fromDate">
+      <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+      <mat-datepicker #from></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="to" placeholder="До" [(ngModel)]="toDate">
+      <mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
+      <mat-datepicker #to></mat-datepicker>
+    </mat-form-field>
+
+    <button class="value" mat-raised-button="primary" (click)="load()">Поиск</button>
+
+  </div>
+
+
+  <div *ngIf="result">
+
+    <table>
+      <tr>
+        <th width="200">Начало</th>
+        <th width="200">Конец</th>
+        <th>Количество часов</th>
+      </tr>
+
+      <tr *ngFor="let item of result">
+        <td>{{ item.start | date:'short' }}</td>
+        <td>{{ item.end | date:'short' }}</td>
+        <td>{{ item.hours | number }}</td>
+      </tr>
+
+
+      <tr>
+        <td></td>
+        <td><b>Всего:</b></td>
+        <td><b>{{ totalHours }} ч</b></td>
+      </tr>
+    </table>
+
+  </div>
+
+
+
+</div>

@@ -13,7 +13,11 @@ import {HttpClientModule} from '@angular/common/http';
 import {UsersComponent} from './users/users.component';
 import {ChartModule} from 'angular-highcharts';
 import {FormsModule} from '@angular/forms';
+import {StreamsComponent} from './streams/streams.component';
 
+import { registerLocaleData } from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
+registerLocaleData(localeRu);
 
 @NgModule({
   declarations: [
@@ -21,6 +25,7 @@ import {FormsModule} from '@angular/forms';
     NavComponent,
     StaticsComponent,
     UsersComponent,
+    StreamsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,4 +42,5 @@ import {FormsModule} from '@angular/forms';
   providers: [{provide: LOCALE_ID, useValue: 'ru'}],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
