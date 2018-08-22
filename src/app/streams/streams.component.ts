@@ -28,7 +28,6 @@ export class StreamsComponent implements OnInit {
   async load() {
     const strToTimestamp = str => (new Date(str)).getTime();
     const msToHours = ms => (ms / (60 * 60 * 1000));
-
     const result = await this.streamsService.getStatStreamer({nickname: this.nickname, from: this.fromDate, to: this.toDate});
 
     result.map(item => item.hours = msToHours(strToTimestamp(item.end) - strToTimestamp(item.start)));
