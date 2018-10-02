@@ -14,9 +14,11 @@ import {UsersComponent} from './users/users.component';
 import {ChartModule} from 'angular-highcharts';
 import {FormsModule} from '@angular/forms';
 import {StreamsComponent} from './streams/streams.component';
+import {ReferersComponent} from './referers/referers.component';
 
-import { registerLocaleData } from '@angular/common';
+import {registerLocaleData} from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
+
 registerLocaleData(localeRu);
 
 @NgModule({
@@ -25,7 +27,8 @@ registerLocaleData(localeRu);
     NavComponent,
     StaticsComponent,
     UsersComponent,
-    StreamsComponent
+    StreamsComponent,
+    ReferersComponent
   ],
   imports: [
     BrowserModule,
