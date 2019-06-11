@@ -11,6 +11,6 @@ export interface IStreamStat {
 @Injectable({providedIn: 'root'})
 @ResourceParams({pathPrefix: 'statistics'})
 export class RegistersService extends AppResource {
-  @ResourceAction({path: '/register'})
+  @ResourceAction({path: '/registers'})
   getRegistersUser: IResourceMethod<{ from: Date, to: Date }, number>;
 }
