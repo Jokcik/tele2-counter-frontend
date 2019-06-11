@@ -19,6 +19,7 @@ import {ReferersComponent} from './referers/referers.component';
 import {registerLocaleData} from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 import { ModerationButtonsComponent } from './users/moderation-buttons/moderation-buttons.component';
+import {RegistersComponent} from './registers/registers.component';
 
 registerLocaleData(localeRu);
 
@@ -30,7 +31,8 @@ registerLocaleData(localeRu);
     UsersComponent,
     StreamsComponent,
     ReferersComponent,
-    ModerationButtonsComponent
+    ModerationButtonsComponent,
+    RegistersComponent
   ],
   imports: [
     BrowserModule,

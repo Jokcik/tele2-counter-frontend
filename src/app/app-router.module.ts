@@ -7,6 +7,7 @@ import {StaticsComponent} from './statics/statics.component';
 import {UsersComponent} from './users/users.component';
 import {StreamsComponent} from './streams/streams.component';
 import {ReferersComponent} from './referers/referers.component';
+import {RegistersComponent} from './registers/registers.component';
 
 const routes: Routes = [
   {path: '', component: StaticsComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'users', component: UsersComponent},
   {path: 'streams', component: StreamsComponent},
   {path: 'referers', component: ReferersComponent},
+  {path: 'registers', component: RegistersComponent},
 ];
 
 @NgModule({

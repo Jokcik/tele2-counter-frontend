@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'https://esport.tele2.ru/api/'
+  url: 'https://cyberhero.tele2.ru/api/'
   // url: 'http://localhost:8001/'
 };
 
